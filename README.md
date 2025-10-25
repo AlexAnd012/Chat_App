@@ -29,6 +29,7 @@
 Доступ по умолчанию: http://localhost:8080.
 
 **Проверка:**
+
 curl http://localhost:8080/healthz
 curl -X POST http://localhost:8080/api/messages \
   -H 'Content-Type: application/json' \
