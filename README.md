@@ -37,14 +37,12 @@ curl http://localhost:8080/healthz <br> curl -X POST http://localhost:8080/api/m
 http://localhost:8080/swagger/index.html
 
 ## **Переменные окружения**
-(из .env в docker-compose.yml)
+**(из .env в docker-compose.yml)**
 
-ADDR=:8080
-REDIS_ADDR=redis:6379     # в докере имя сервиса redis
-HISTORY_LIMIT=500         # сколько сообщений храним/отдаём максимум
-GIN_MODE=release
-
-Для локального запуска без Docker: REDIS_ADDR=127.0.0.1:6379.
+- ADDR=:8080<br>
+- REDIS_ADDR=redis:6379     # в докере имя сервиса redis<br>
+- HISTORY_LIMIT=500         # сколько сообщений храним/отдаём максимум<br>
+- GIN_MODE=release<br>
 
 ## **API** 
 
