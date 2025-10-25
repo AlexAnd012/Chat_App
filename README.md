@@ -1,4 +1,4 @@
-# H1Chat App (Go) — Backend
+# H1 Chat App (Go) — Backend
 Мини-чат на Go с хранением истории в Redis, сборкой и запуском через Docker/Compose, и интерактивной документацией API на Swagger.
 
 ## H2**Стек и как используется**
