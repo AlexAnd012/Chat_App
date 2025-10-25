@@ -67,8 +67,8 @@ http://localhost:8080/swagger/index.html
 ├── cmd/<br>
 │   └── main.go   # запуск HTTP-сервера, DI зависимостей<br>   
 ├── internal/<br>
-|   ├── data/<br>
-|   |   └── types.go <br>
+│   ├── data/<br>
+│   │   └── types.go <br>
 │   ├── httpserver/<br>
 │   │   ├── handlers.go       # POST/GET messages, валидация, ответы<br>
 │   │   └── router.go         # маршруты (/healthz, /api/*, /swagger)<br>
