@@ -65,14 +65,15 @@ http://localhost:8080/swagger/index.html
 ## **Структура проекта**
 .<br>
 ├── cmd/<br>
-│   └── server/<br>
-│       └── main.go           # запуск HTTP-сервера, DI зависимостей<br>
+│   └── main.go   # запуск HTTP-сервера, DI зависимостей<br>   
 ├── internal/<br>
+|   ├── data/<br>
+|   |   └── types.go <br>
 │   ├── httpserver/<br>
 │   │   ├── handlers.go       # POST/GET messages, валидация, ответы<br>
 │   │   └── router.go         # маршруты (/healthz, /api/*, /swagger)<br>
 │   └── storage/<br>
-│       └── redisrepo.go      # Redis-клиент: Ping, AppendMessage, TrimHistory, RecentMessages<br>
+│       └── Redisrepo.go      # Redis-клиент: Ping, AppendMessage, TrimHistory, RecentMessages<br>
 ├── docs/                     # сгенерированные Swagger-файлы (swag init)<br>
 ├── go.mod / go.sum<br>
 ├── Dockerfile                # multi-stage сборка<br>
