@@ -14,30 +14,28 @@
 
 ## **Реализовано**
 
-POST /api/messages — создать сообщение (валидация username/text, запись в Redis).
+- **POST /api/messages** — создать сообщение (валидация username/text, запись в Redis).
 
-GET /api/messages?limit=N — получить последние N сообщений в хронологическом порядке.
+- **GET /api/messages?limit=N** — получить последние N сообщений в хронологическом порядке.
 
-GET /healthz — проверка живости сервиса и доступности Redis.
+- **GET /healthz** — проверка живости сервиса и доступности Redis.
 
-Swagger UI по пути /swagger/index.html.
+- **Swagger UI по пути /swagger/index.html.**
 
-Dockerfile (multi-stage) и docker-compose.yml для локального запуска.
-
-Возможность локального запуска без Docker (при установленном Redis).
+- **Dockerfile (multi-stage) и docker-compose.yml** для локального запуска.
 
 ## **старт**
-docker compose up --build
+**docker compose up --build**
 Доступ по умолчанию: http://localhost:8080.
 
-Проверка:
+**Проверка:**
 curl http://localhost:8080/healthz
 curl -X POST http://localhost:8080/api/messages \
   -H 'Content-Type: application/json' \
   -d '{"username":"Alex","text":"Hello from Docker!"}'
 curl 'http://localhost:8080/api/messages?limit=10'
 
-Открыть Swagger UI:
+**Открыть Swagger UI:**
 http://localhost:8080/swagger/index.html
 
 ## **Переменные окружения**
