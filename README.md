@@ -10,7 +10,7 @@
 
 - **Docker** / Docker Compose — воспроизводимая сборка и запуск (api + redis) одной командой.
 
-- **Swagger (swag + gin-swagger)** — живой UI на /swagger/index.html с кнопкой Try it out. Спецификация генерируется из комментариев в коде.
+- **Swagger (swag + gin-swagger)** — живой UI на /swagger/index.html с кнопкой **Try it out**. Спецификация генерируется из комментариев в коде.
 
 ## **Реализовано**
 
