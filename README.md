@@ -31,9 +31,13 @@
 **Проверка:**
 
 curl http://localhost:8080/healthz
+
 curl -X POST http://localhost:8080/api/messages \
+
   -H 'Content-Type: application/json' \
+  
   -d '{"username":"Alex","text":"Hello from Docker!"}'
+  
 curl 'http://localhost:8080/api/messages?limit=10'
 
 **Открыть Swagger UI:**
