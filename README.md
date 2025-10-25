@@ -63,18 +63,18 @@ http://localhost:8080/swagger/index.html
 Возвращает массив последних сообщений (старые → новые).
 
 ## **Структура проекта**
-.
-├── cmd/
-│   └── server/
-│       └── main.go           # запуск HTTP-сервера, DI зависимостей
-├── internal/
-│   ├── httpserver/
-│   │   ├── handlers.go       # POST/GET messages, валидация, ответы
-│   │   └── router.go         # маршруты (/healthz, /api/*, /swagger)
-│   └── storage/
-│       └── redisrepo.go      # Redis-клиент: Ping, AppendMessage, TrimHistory, RecentMessages
-├── docs/                     # сгенерированные Swagger-файлы (swag init)
-├── go.mod / go.sum
-├── Dockerfile                # multi-stage сборка
-├── docker-compose.yml        # api + redis
-└── .env                      # конфиг окружения
+.<br>
+├── cmd/<br>
+│   └── server/<br>
+│       └── main.go           # запуск HTTP-сервера, DI зависимостей<br>
+├── internal/<br>
+│   ├── httpserver/<br>
+│   │   ├── handlers.go       # POST/GET messages, валидация, ответы<br>
+│   │   └── router.go         # маршруты (/healthz, /api/*, /swagger)<br>
+│   └── storage/<br>
+│       └── redisrepo.go      # Redis-клиент: Ping, AppendMessage, TrimHistory, RecentMessages<br>
+├── docs/                     # сгенерированные Swagger-файлы (swag init)<br>
+├── go.mod / go.sum<br>
+├── Dockerfile                # multi-stage сборка<br>
+├── docker-compose.yml        # api + redis<br>
+└── .env                      # конфиг окружения<br>
