@@ -1,0 +1,85 @@
+basePath: /api
+definitions:
+  data.Message:
+    properties:
+      id:
+        type: string
+      isSystem:
+        type: boolean
+      sendtime:
+        type: string
+      text:
+        type: string
+      username:
+        type: string
+    type: object
+  httpserver.createMessage:
+    properties:
+      text:
+        type: string
+      username:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Simple chat backend (messages history in Redis).
+  title: Chat API
+  version: 0.1.0
+paths:
+  /messages:
+    get:
+      description: Return last N messages (chronological order)
+      parameters:
+      - description: Items count (1..HISTORY_LIMIT)
+        in: query
+        minimum: 1
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/data.Message'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: List recent messages
+    post:
+      consumes:
+      - application/json
+      description: Create a new chat message and store it in Redis
+      parameters:
+      - description: Message payload
+        in: body
+        name: message
+        required: true
+        schema:
+          $ref: '#/definitions/httpserver.createMessage'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/data.Message'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Create message
+swagger: "2.0"

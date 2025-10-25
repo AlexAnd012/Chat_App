@@ -34,6 +34,16 @@ func clear(s string) string {
 	return s
 }
 
+// PostMessage godoc
+// @Summary      Create message
+// @Description  Create a new chat message and store it in Redis
+// @Accept       json
+// @Produce      json
+// @Param        message  body      createMessage  true  "Message payload"
+// @Success      201      {object}  data.Message
+// @Failure      400      {object}  map[string]string
+// @Failure      500      {object}  map[string]string
+// @Router       /messages [post]
 func (h *Handlers) PostMessage(c *gin.Context) {
 	var in createMessage
 	if err := c.ShouldBindJSON(&in); err != nil {
@@ -72,6 +82,14 @@ func (h *Handlers) PostMessage(c *gin.Context) {
 	c.JSON(http.StatusCreated, msg)
 }
 
+// GetMessages godoc
+// @Summary      List recent messages
+// @Description  Return last N messages (chronological order)
+// @Produce      json
+// @Param        limit  query     int  false  "Items count (1..HISTORY_LIMIT)"  minimum(1)
+// @Success      200    {array}   data.Message
+// @Failure      500    {object}  map[string]string
+// @Router       /messages [get]
 func (h *Handlers) GetMessages(c *gin.Context) {
 	limit := h.historyLimit
 	if v := c.Query("limit"); v != "" {

@@ -1,3 +1,7 @@
+// @title           Chat API
+// @version         0.1.0
+// @description     Simple chat backend (messages history in Redis).
+// @BasePath        /api
 package main
 
 import (
