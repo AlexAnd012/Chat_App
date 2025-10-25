@@ -46,9 +46,9 @@ http://localhost:8080/swagger/index.html
 
 ## **API** 
 
-GET /healthz → 200 OK, если сервис и Redis доступны.
+- **GET /healthz** → 200 OK, если сервис и Redis доступны.
 
-POST /api/messages
+- **POST /api/messages**
 { "username": "Alex", "text": "Hello!" }
 
 Ответ 201 Created:
@@ -59,7 +59,7 @@ POST /api/messages
   "ts": "2025-01-01T12:00:00Z"
 }
 
-GET /api/messages?limit=50
+- **GET /api/messages?limit=50**
 Возвращает массив последних сообщений (старые → новые).
 
 ## **Структура проекта**
