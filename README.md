@@ -1,4 +1,4 @@
-#Chat App (Go) — Backend
+#Chat App (Go) — Backend#
 Мини-чат на Go с хранением истории в Redis, сборкой и запуском через Docker/Compose, и интерактивной документацией API на Swagger.
 
 ##**Стек и как используется**
